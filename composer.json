@@ -1,0 +1,8 @@
+{
+    "require": {
+        "crossjoin/pre-mailer": "^1.0",
+        "ua-parser/uap-php": "^3.4",
+        "guzzlehttp/guzzle": "^6.2",
+        "phpmailer/phpmailer": "^5.2"
+    }
+}

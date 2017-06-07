@@ -1,0 +1,10 @@
+node_modules/
+frontend/resources/
+vendor/
+public/assets/
+app/config/config.ini
+sftp-config.json
+
+### Phalcon ###
+cache/
+.DS_Store
