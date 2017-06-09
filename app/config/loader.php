@@ -15,6 +15,7 @@ $loader->registerDirs([
 $loader->registerClasses([
     'Services' 		=> APP_PATH . 'app/config/services.php',
     'JsonResponse'  => APP_PATH . 'app/util/JsonResponse.php',
+    'JsonData'  	=> APP_PATH . 'app/util/JsonData.php',
     'JsonException' => APP_PATH . 'app/util/JsonException.php',
     'UUID' 			=> APP_PATH . 'app/util/UUID.php',
     'ChromePhp'     => APP_PATH . 'app/util/ChromePhp.php'

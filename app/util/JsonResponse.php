@@ -28,10 +28,33 @@ class JsonResponse extends Component
 	     */
 	    protected $meta;
 
+
+	    /**
+	     * @var array
+	     * An object describing the server’s implementation.
+	     */
+	    protected $jsonapi;
+
+	    /**
+	     * @var array
+	     * A links object related to the primary data.
+	     */
+	    protected $links;
+
+	    /**
+	     * @var array
+	     * An array of resource objects that are related to the primary data and/or each other (“included resources”)
+	     */
+	    protected $included;
+
 	    public function __construct () {
-	    	$this->data = array();
-	    	$this->errors = array();
-		    $this->meta = array('copyright' => $this->config->meta['copyright'], 'authors' => explode(',', $this->config->meta['authors']));
+	    	$this->data     = [];
+	    	$this->errors 	= [];
+		    $this->meta 	= ['copyright' => $this->config->meta['copyright'], 'authors' => explode(',', $this->config->meta['authors'])];
+		    $this->jsonapi  = ['version' => '1.0'];
+		    $this->links 	= [];
+		    $this->included = [];
+
 		}
 
 
@@ -44,10 +67,10 @@ class JsonResponse extends Component
 			$response = new Response();
         	$this->response->setContentType('application/vnd.api+json');
 
-			if ($this->data) {
-				$json = array ('data' => $this->data, 'meta' => $this->meta);
+			if ($this->errors) {
+				$json = ['errors' => $this->errors, 'meta' => $this->meta];
 			} else {
-				$json = array ('errors' => $this->errors, 'meta' => $this->meta);
+				$json = ['data' => $this->data, 'meta' => $this->meta];
 			}
 
 			$response->setContent(json_encode($json, JSON_UNESCAPED_SLASHES));

@@ -1,0 +1,29 @@
+[database]
+adapter  = Mysql
+host     = localhost
+username = root
+password = root
+dbname   = invmanager
+charset  = utf8
+
+[application]
+controllersDir = app/controllers/
+modelsDir      = app/models/
+viewsDir       = app/views/
+pluginsDir     = app/plugins/
+libraryDir     = app/library/
+utilDir		   = app/util/
+baseUri        = /invmanager/
+
+[mail]
+fromName		= Leo
+fromEmail		= leomleaowago@gmail.com
+smtp[server]	= smtp.gmail.com
+smtp[port]		= 465
+smtp[security]	= ssl
+smtp[username]	= leomleaowago@gmail.com
+smtp[password]	= Stronghold
+
+[meta]
+copyright = Copyright 2017 LEO
+authors   = Leonardo, stackoverflow, phalconDOCS

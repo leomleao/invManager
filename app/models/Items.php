@@ -24,19 +24,12 @@ class Items extends \Phalcon\Mvc\Model
      * @var integer
      * @Column(type="integer", length=11, nullable=false)
      */
-    protected $itemAllocatedToUserID;
-
-    /**
-     *
-     * @var integer
-     * @Column(type="integer", length=11, nullable=false)
-     */
     protected $itemDescription;
 
     /**
      *
      * @var integer
-     * @Column(type="integer", length=11, nullable=false)
+     * @Column(type="integer", length=11, nullable=true)
      */
     protected $itemSpec;
 
@@ -57,7 +50,7 @@ class Items extends \Phalcon\Mvc\Model
     /**
      *
      * @var integer
-     * @Column(type="integer", length=11, nullable=false)
+     * @Column(type="integer", length=11, nullable=true)
      */
     protected $itemInventoryCode;
 
@@ -85,28 +78,28 @@ class Items extends \Phalcon\Mvc\Model
     /**
      *
      * @var string
-     * @Column(type="string", length=12, nullable=false)
+     * @Column(type="string", length=12, nullable=true)
      */
     protected $itemMAC;
 
     /**
      *
      * @var string
-     * @Column(type="string", length=45, nullable=false)
+     * @Column(type="string", length=45, nullable=true)
      */
     protected $itemSerialNumber;
 
     /**
      *
      * @var string
-     * @Column(type="string", length=45, nullable=false)
+     * @Column(type="string", length=45, nullable=true)
      */
     protected $itemPartNumber;
 
     /**
      *
      * @var string
-     * @Column(type="string", length=45, nullable=false)
+     * @Column(type="string", length=45, nullable=true)
      */
     protected $itemIMEI;
 
@@ -146,19 +139,6 @@ class Items extends \Phalcon\Mvc\Model
     public function setItemTypeID($itemTypeID)
     {
         $this->itemTypeID = $itemTypeID;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field itemAllocatedToUserID
-     *
-     * @param integer $itemAllocatedToUserID
-     * @return $this
-     */
-    public function setItemAllocatedToUserID($itemAllocatedToUserID)
-    {
-        $this->itemAllocatedToUserID = $itemAllocatedToUserID;
 
         return $this;
     }
@@ -366,16 +346,6 @@ class Items extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns the value of field itemAllocatedToUserID
-     *
-     * @return integer
-     */
-    public function getItemAllocatedToUserID()
-    {
-        return $this->itemAllocatedToUserID;
-    }
-
-    /**
      * Returns the value of field itemDescription
      *
      * @return integer
@@ -513,6 +483,29 @@ class Items extends \Phalcon\Mvc\Model
     public function getItemLastMod()
     {
         return $this->itemLastMod;
+    }
+
+    /**
+     * Method to set the value of field itemAllocatedToUserID
+     *
+     * @param integer $itemAllocatedToUserID
+     * @return $this
+     */
+    public function setItemAllocatedToUserID($itemAllocatedToUserID)
+    {
+        $this->itemAllocatedToUserID = $itemAllocatedToUserID;
+
+        return $this;
+    }
+
+    /**
+     * Returns the value of field itemAllocatedToUserID
+     *
+     * @return integer
+     */
+    public function getItemAllocatedToUserID()
+    {
+        return $this->itemAllocatedToUserID;
     }
 
     /**

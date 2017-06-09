@@ -36,6 +36,34 @@ class Allocations extends \Phalcon\Mvc\Model
     /**
      *
      * @var string
+     * @Column(type="string", nullable=true)
+     */
+    protected $allocationEndDate;
+
+    /**
+     *
+     * @var integer
+     * @Column(type="integer", length=1, nullable=true)
+     */
+    protected $allocationReturned;
+
+    /**
+     *
+     * @var integer
+     * @Column(type="integer", length=1, nullable=true)
+     */
+    protected $allocationHasTerm;
+
+    /**
+     *
+     * @var string
+     * @Column(type="string", length=45, nullable=true)
+     */
+    protected $allocationTermPath;
+
+    /**
+     *
+     * @var string
      * @Column(type="string", nullable=false)
      */
     protected $allocationInsertionDate;
@@ -95,6 +123,58 @@ class Allocations extends \Phalcon\Mvc\Model
     public function setAllocationDate($allocationDate)
     {
         $this->allocationDate = $allocationDate;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field allocationEndDate
+     *
+     * @param string $allocationEndDate
+     * @return $this
+     */
+    public function setAllocationEndDate($allocationEndDate)
+    {
+        $this->allocationEndDate = $allocationEndDate;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field allocationReturned
+     *
+     * @param integer $allocationReturned
+     * @return $this
+     */
+    public function setAllocationReturned($allocationReturned)
+    {
+        $this->allocationReturned = $allocationReturned;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field allocationHasTerm
+     *
+     * @param integer $allocationHasTerm
+     * @return $this
+     */
+    public function setAllocationHasTerm($allocationHasTerm)
+    {
+        $this->allocationHasTerm = $allocationHasTerm;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field allocationTermPath
+     *
+     * @param string $allocationTermPath
+     * @return $this
+     */
+    public function setAllocationTermPath($allocationTermPath)
+    {
+        $this->allocationTermPath = $allocationTermPath;
 
         return $this;
     }
@@ -166,6 +246,46 @@ class Allocations extends \Phalcon\Mvc\Model
     }
 
     /**
+     * Returns the value of field allocationEndDate
+     *
+     * @return string
+     */
+    public function getAllocationEndDate()
+    {
+        return $this->allocationEndDate;
+    }
+
+    /**
+     * Returns the value of field allocationReturned
+     *
+     * @return integer
+     */
+    public function getAllocationReturned()
+    {
+        return $this->allocationReturned;
+    }
+
+    /**
+     * Returns the value of field allocationHasTerm
+     *
+     * @return integer
+     */
+    public function getAllocationHasTerm()
+    {
+        return $this->allocationHasTerm;
+    }
+
+    /**
+     * Returns the value of field allocationTermPath
+     *
+     * @return string
+     */
+    public function getAllocationTermPath()
+    {
+        return $this->allocationTermPath;
+    }
+
+    /**
      * Returns the value of field allocationInsertionDate
      *
      * @return string
@@ -196,16 +316,6 @@ class Allocations extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns table name mapped in the model.
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return 'allocations';
-    }
-
-    /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
@@ -225,6 +335,16 @@ class Allocations extends \Phalcon\Mvc\Model
     public static function findFirst($parameters = null)
     {
         return parent::findFirst($parameters);
+    }
+
+    /**
+     * Returns table name mapped in the model.
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return 'allocations';
     }
 
 }

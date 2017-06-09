@@ -87,20 +87,7 @@ class Users extends \Phalcon\Mvc\Model
      * @var integer
      * @Column(type="integer", length=1, nullable=false)
      */
-    protected $userStatus;
-
-    /**
-     * Method to set the value of field userID
-     *
-     * @param integer $userID
-     * @return $this
-     */
-    public function setUserID($userID)
-    {
-        $this->userID = $userID;
-
-        return $this;
-    }
+    protected $userStatus;    
 
     /**
      * Method to set the value of field userUser
@@ -191,33 +178,7 @@ class Users extends \Phalcon\Mvc\Model
         $this->userPicturePath = $userPicturePath;
 
         return $this;
-    }
-
-    /**
-     * Method to set the value of field userCreationDate
-     *
-     * @param string $userCreationDate
-     * @return $this
-     */
-    public function setUserCreationDate($userCreationDate)
-    {
-        $this->userCreationDate = $userCreationDate;
-
-        return $this;
-    }
-
-    /**
-     * Method to set the value of field userLastMod
-     *
-     * @param string $userLastMod
-     * @return $this
-     */
-    public function setUserLastMod($userLastMod)
-    {
-        $this->userLastMod = $userLastMod;
-
-        return $this;
-    }
+    }    
 
     /**
      * Method to set the value of field userRoleID
@@ -379,16 +340,6 @@ class Users extends \Phalcon\Mvc\Model
     }
 
     /**
-     * Returns table name mapped in the model.
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return 'users';
-    }
-
-    /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
@@ -408,6 +359,16 @@ class Users extends \Phalcon\Mvc\Model
     public static function findFirst($parameters = null)
     {
         return parent::findFirst($parameters);
+    }
+
+    /**
+     * Returns table name mapped in the model.
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return 'users';
     }
 
 }

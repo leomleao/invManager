@@ -67,13 +67,13 @@ class JsonException {
 
 	    public function __construct () {
 	    	$this->id 		= uniqid();
-	    	$this->links 	= array('about' => '');
+	    	$this->links 	= ['about' => ''];
 	    	$this->status 	= '';
 	    	$this->code 	= '';
 	    	$this->title 	= '';
 	    	$this->detail 	= '';
-	    	$this->source 	= array('pointer' => '', 'parameter' => '');
-	    	$this->meta 	= array();	 
+	    	$this->source 	= ['pointer' => '', 'parameter' => ''];
+	    	$this->meta 	= [];	 
 		}
 
 		public function addLink($link){
@@ -120,7 +120,7 @@ class JsonException {
 			return $this;
 		}
 
-		public function getError (){
+		public function commit (){
 
 			$error = array (
 					'id'     => $this->id,
