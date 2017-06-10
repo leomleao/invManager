@@ -28,9 +28,38 @@ class UsersController extends \Phalcon\Mvc\Controller
              * Do the thing
              */
 
-            print_r($this->dispatcher->hasParam('id'));
-            throw new Exception('Divisão por zero.', 2004);
+            if(!$this->dispatcher->hasParam('id'))
+            {
+                throw new Exception("GET request must contain id.", 440);
+            }
 
+            $id = $this->dispatcher->getParam('id');
+
+            $user = Users::findFirstByUserID($id);
+
+            $jsonData = new JsonData();
+            if ($user) {
+                $jsonData->setId($id)
+                         ->setType('User')
+                         ->addAttributes([
+                            'userUser'                   => '',
+                            'userName'                   => '',
+                            'userLastKnownPassword'      => '',
+                            'userLastKnownPhonePassword' => '',
+                            'userEmail'                  => '',
+                            'userPicturePath'            => '',
+                            'userCreationDate'           => '',
+                            'userLastMod'                => '',
+                            'userStatus'                 => '',
+                            'userRoleID'                 => '',
+                            'userDepartmentID'           => ''
+                         ]);  
+            } else {
+                //Send 'No Content'  Html response code   
+                $responseHTMLcode = 204;
+            }   
+
+            $jsonResponse->addData($jsonData->commit());
 
 
         } catch (\Exception $e) {
@@ -44,7 +73,7 @@ class UsersController extends \Phalcon\Mvc\Controller
                   ->addSource($e->getFile (), ['line' => $e->getLine ()])
                   ->addMeta('Esclareco aqui que deu merda');
 
-        $jsonResponse->addError($error->commit());
+            $jsonResponse->addError($error->commit());
 
             /**
              * catch the error

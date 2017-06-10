@@ -85,6 +85,13 @@ class Items extends \Phalcon\Mvc\Model
     /**
      *
      * @var string
+     * @Column(type="string", length=48, nullable=true)
+     */
+    protected $itemBitLockerKey;
+
+    /**
+     *
+     * @var string
      * @Column(type="string", length=45, nullable=true)
      */
     protected $itemSerialNumber;
@@ -256,6 +263,19 @@ class Items extends \Phalcon\Mvc\Model
     public function setItemMAC($itemMAC)
     {
         $this->itemMAC = $itemMAC;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field itemBitLockerKey
+     *
+     * @param string $itemBitLockerKey
+     * @return $this
+     */
+    public function setItemBitLockerKey($itemBitLockerKey)
+    {
+        $this->itemBitLockerKey = $itemBitLockerKey;
 
         return $this;
     }
@@ -433,6 +453,16 @@ class Items extends \Phalcon\Mvc\Model
     public function getItemMAC()
     {
         return $this->itemMAC;
+    }
+
+    /**
+     * Returns the value of field itemBitLockerKey
+     *
+     * @return string
+     */
+    public function getItemBitLockerKey()
+    {
+        return $this->itemBitLockerKey;
     }
 
     /**

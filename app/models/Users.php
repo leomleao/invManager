@@ -50,6 +50,13 @@ class Users extends \Phalcon\Mvc\Model
     /**
      *
      * @var string
+     * @Column(type="string", length=6, nullable=true)
+     */
+    protected $userLastKnownPhonePassword;
+
+    /**
+     *
+     * @var string
      * @Column(type="string", length=45, nullable=true)
      */
     protected $userEmail;
@@ -150,6 +157,19 @@ class Users extends \Phalcon\Mvc\Model
     public function setUserLastKnownPassword($userLastKnownPassword)
     {
         $this->userLastKnownPassword = $userLastKnownPassword;
+
+        return $this;
+    }
+
+    /**
+     * Method to set the value of field userLastKnownPhonePassword
+     *
+     * @param string $userLastKnownPhonePassword
+     * @return $this
+     */
+    public function setUserLastKnownPhonePassword($userLastKnownPhonePassword)
+    {
+        $this->userLastKnownPhonePassword = $userLastKnownPhonePassword;
 
         return $this;
     }
@@ -264,6 +284,16 @@ class Users extends \Phalcon\Mvc\Model
     public function getUserLastKnownPassword()
     {
         return $this->userLastKnownPassword;
+    }
+
+    /**
+     * Returns the value of field userLastKnownPhonePassword
+     *
+     * @return string
+     */
+    public function getUserLastKnownPhonePassword()
+    {
+        return $this->userLastKnownPhonePassword;
     }
 
     /**

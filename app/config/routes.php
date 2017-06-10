@@ -18,20 +18,20 @@ $router = new Router();
 
 $router->addPost('/users', [
     'controller' => 'users',
-    'action' => 'create'
+    'action'     => 'create'
 ]);
 
-$router->addGet('/users/{id}', [
+$router->addGet('/users/{id:[0-9]+}', [
     'controller' => 'users',
-    'action' => 'read'
+    'action'     => 'read'
 ]);
 
-$router->addPut('/users/{id}', [
+$router->addPut('/users/{id:[0-9]+}', [
     'controller' => 'users',
     'action' => 'update'
 ]);
 
-$router->addDelete('/users/{id}', [
+$router->addDelete('/users/{id:[0-9]+}', [
     'controller' => 'users',
     'action' => 'delete'
 ]);
@@ -48,17 +48,17 @@ $router->addPost('/items', [
     'action' => 'create'
 ]);
 
-$router->addGet('/items/{id}', [
+$router->addGet('/items/{id:[0-9]+}', [
     'controller' => 'items',
     'action' => 'read'
 ]);
 
-$router->addPut('/items/{id}', [
+$router->addPut('/items/{id:[0-9]+}', [
     'controller' => 'items',
     'action' => 'update'
 ]);
 
-$router->addDelete('/items/{id}', [
+$router->addDelete('/items/{id:[0-9]+}', [
     'controller' => 'items',
     'action' => 'delete'
 ]);
@@ -78,17 +78,17 @@ $router->addPost('/allocations', [
     'action' => 'create'
 ]);
 
-$router->addGet('/allocations/{id}', [
+$router->addGet('/allocations/{id:[0-9]+}', [
     'controller' => 'allocations',
     'action' => 'read'
 ]);
 
-$router->addPut('/allocations/{id}', [
+$router->addPut('/allocations/{id:[0-9]+}', [
     'controller' => 'allocations',
     'action' => 'update'
 ]);
 
-$router->addDelete('/allocations/{id}', [
+$router->addDelete('/allocations/{id:[0-9]+}', [
     'controller' => 'allocations',
     'action' => 'delete'
 ]);
@@ -106,17 +106,17 @@ $router->addPost('/itemtypes', [
     'action' => 'create'
 ]);
 
-$router->addGet('/itemtypes/{id}', [
+$router->addGet('/itemtypes/{id:[0-9]+}', [
     'controller' => 'itemtypes',
     'action' => 'read'
 ]);
 
-$router->addPut('/itemtypes/{id}', [
+$router->addPut('/itemtypes/{id:[0-9]+}', [
     'controller' => 'itemtypes',
     'action' => 'update'
 ]);
 
-$router->addDelete('/itemtypes/{id}', [
+$router->addDelete('/itemtypes/{id:[0-9]+}', [
     'controller' => 'itemtypes',
     'action' => 'delete'
 ]);

@@ -54,8 +54,7 @@ class JsonData {
 	   
 
 	    public function __construct () {
-	    	$this->type 		 = '';
-	    	$this->id 			 = '';
+	    	$this->isEmpty		 = TRUE;
 	    	$this->attributes 	 = array();
 	    	$this->relationships = array();
 	    	$this->links 		 = array();
@@ -63,13 +62,15 @@ class JsonData {
 		}
 
 		public function setType($type){
-			
-			$this->types = $type;
+
+			$this->isEmpty = FALSE;
+			$this->type = $type;
 			return $this;
 		}
 
 		public function setId ($id){
-			
+
+			$this->isEmpty = FALSE;			
 			$this->id = $id;
 			return $this;
 		}
@@ -101,6 +102,10 @@ class JsonData {
 
 		public function commit (){
 
+			if ($this->isEmpty) {
+				return [];
+			}
+
 			$data = array (
 					'type'     		=> $this->type,
                     'id'  			=> $this->id,
@@ -110,7 +115,7 @@ class JsonData {
                     'meta' 			=> $this->meta
 				);
 
-			return $error;
+			return $data;
 		}
 
 }
